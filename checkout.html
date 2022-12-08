@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <title>Shop Mens</title>
+
+    <script src="https://kit.fontawesome.com/7a77f5e404.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./resources/css/styles_checkout.css">
+
+</head>
+<body>
+    <div id="header"></div>
+    <h4 id="trees"></h4>
+    <div id="cart">
+
+    </div>
+    <div id="cartTotal">
+    </div>
+    <div id="userInfo">
+
+    </div>
+
+    <div id="guestCheckout">
+        <p>Please Register or Login to Continue</p>
+        <button id="login">Login</button>
+        <button id="register">Register</button>
+    </div>
+   
+    <script>
+        
+
+    $(document).ready(function() {
+        $(function(){
+              $('#header').load("header");
+            });
+        $(function(){
+            $('#footer').load("footer");
+        });
+        
+        var cart = JSON.parse(sessionStorage.getItem("cart"));
+        var user = sessionStorage.getItem("user");
+        $("#guestCheckout").hide();
+        $("#login").click(function(){
+            location.href = './login';
+        });
+        $("#register").click(function(){
+            location.href = './register';
+        });
+
+        console.log(user);
+        if(cart === null){
+            alert("Empty cart!");
+            $("#userInfo").html("<p>Please add items to your cart to continue!</p>");
+
+        } else if (user !== null){
+            $("#trees").text(`This order plants ${cart.length} trees!`);
+            populateAllInfo(cart, user);
+        } else{
+            $("#userInfo").hide();
+            $("#trees").text(`This order plants ${cart.length} trees!`);
+            getItems(cart);
+            console.log("No login!");
+            $("#guestCheckout").show();
+        }
+
+        setTimeout(() => {
+              refreshTicker();
+            }, "1000");
+    });
+
+    </script>
+
+<script src="./resources/js/checkoutLogic.js"></script>
+<script src="./resources/js/requests.js"></script>
+<div id="footer"></div>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./resources/css/styles_confirmation.css">
+    <script src="https://kit.fontawesome.com/7a77f5e404.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <title>Confirmation</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="./resources/js/home_script.js"></script>
+    <script>
+    var geocoder;
+    var map;
+
+  function codeAddress() {
+    var address = sessionStorage.getItem("address");
+    console.log(address);
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == 'OK') {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
+
+function initMap() {
+
+    geocoder = new google.maps.Geocoder();
+
+    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var mapOptions = {
+      zoom: 18,
+      center: latlng
+    }
+
+  // The map, centered at Uluru
+ map = new google.maps.Map(document.getElementById("map"), mapOptions);
+  // Call user address
+  codeAddress();
+  sessionStorage.removeItem("cart");
+  $("#homeBtn").click(function(){
+    location.href = './';
+  })
+}
+
+window.initMap = initMap;
+    </script>
+  </head>
+  <body>
+    <div id="header"></div>
+    <h3>Order Confirmation</h3>
+    <p>Thank you for your order!</p>
+    <p>Delivery expected in 2 days.</p>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTuJCB4eWdnFlpf2_aqwMHI8B4KoDDscI&callback=initMap&v=weekly"
+      defer
+    ></script>
+
+    <script>
+      $(document).ready(function() {
+        $(function(){
+              $('#header').load("header");
+            });
+        $(function(){
+            $('#footer').load("footer");
+        });
+
+        setTimeout(() => {
+              refreshTicker();
+            }, "1000");
+      });
+      
+    </script>
+
+    <button id="homeBtn">Keep Shopping</button>
+    <div id="footer"></div>
+    <script src="./resources/js/requests.js"></script>
+  </body>
+</html>

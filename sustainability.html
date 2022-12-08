@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sustainability</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./resources/css/sustainability.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/7a77f5e404.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="header"></div>
+        <main>
+            <section id="home-canvas">
+                <div class="title">
+                    <h1>Plant trees while you shop</h1>
+
+                </div>
+            </section>
+
+
+                <div class = 'booster'>
+                    <h2>Sustainability</h2>
+                    <p>We use the profit we make from your purchases to plant trees where they are needed most. We partner with communities around the world to make sure that your purchases make the most impact.</p>
+                </div>
+
+
+
+            <div class="content-box">
+                <h2>How it works</h2>
+                    <div class = "how-step">
+                        
+                        <div class = "how-image">
+                            <img src = "./resources/images/sustainability/banner1.png">
+                        </div>
+                        <span class = "how-text">You purchase products on RKXC.</span>
+
+                    </div>
+                    <div class = "how-step">
+                        
+                        <div class = "how-image">
+                            <img src = "./resources/images/sustainability/banner2.png" >
+                        </div>
+                        <span class = "how-text">Profit is reinvested to reforestation efforts where they are needed most.</span>
+                    </div>
+                    <div class = "how-step">
+                        
+                        <div class = "how-image">
+                            <img src = "./resources/images/sustainability/banner3.png">
+                        </div>
+                        <span class = "how-text">RKXC plants a happy, healthy sapling with your name!</span>
+                    </div>
+            </div>
+
+            <div id="map">
+                <div class= "map-header">
+                    <div class="map-container">
+                        <h2>We're planting all around the world</h2>
+                        <p>Trees mean a happy environment, healthy people, and a strong economy.</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </main>
+        <script>
+            $(document).ready(function(){
+            $(function(){
+              $('#header').load("header");
+            });
+            $(function(){
+              $('#footer').load("footer");
+            });
+
+            setTimeout(() => {
+              refreshTicker();
+            }, "1000");
+
+            
+    });
+        </script>
+
+        
+<div id="footer"></div>
+<script src="./resources/js/requests.js"></script>
+
+
+    </body>
+</html>

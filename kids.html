@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <title>Shop Kids</title>
+        <link rel="stylesheet" href="./resources/css/styles_chenlu.css">
+        <script src="https://kit.fontawesome.com/7a77f5e404.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet">
+            <script src="./resources/js/home_script.js"></script>
+    </head>
+<body>
+    <div id="header"></div>
+    <h1>Kid's Items</h1>
+
+    <h2>Pants</h2>
+    <div id="Pants" class = "category"></div>
+
+    <h2>Shirts</h2>
+    <div id="Shirts" class = "category"></div>
+
+    <h2>Shorts</h2>
+    <div id="Shorts" class = "category"></div>
+
+    <h2>Shoes</h2>
+    <div id="Shoes" class = "category"></div>
+
+    <div id="Dresses" class = "category"></div>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            populatePage('C');
+        $(function(){
+              $('#header').load("header");
+            });
+        $(function(){
+            $('#footer').load("footer");
+        });
+
+        setTimeout(() => {
+              refreshTicker();
+            }, "1000");
+    });
+    </script>
+  
+         
+
+  <script src="./resources/js/requests.js"></script>
+  <div id="footer"></div>
+
+</body>
+</html>

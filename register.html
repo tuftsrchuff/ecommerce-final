@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./resources/js/home_script.js"></script>
+    <title>Register</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100vh;
+
+        }
+
+        .regP{
+            margin: 0px;
+        }
+
+        #registerBod{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content{
+            width: 400px;
+            padding: 30px;
+            /* border: 1px solid rgb(218, 218, 218); */
+            border-radius: 3px;
+            box-shadow: 0 0 10px 10px rgb(248, 248, 248);
+            font-size: larger;
+            color: rgb(75, 75, 75);
+        }
+        input{
+            margin-bottom: 20px;
+            height: 25px;
+            width: 250px;
+        }
+        input:focus{
+            border-color: rgb(131, 191, 255);
+        }
+        .btn{
+            height: 40px;
+            border: 0px;
+            border-radius: 4px;
+            padding: 2px 20px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .btn-primary{
+            background-color: #409eff;
+            color: #fff;
+        }
+        .btn-primary:hover{
+            background-color: #79bbff;
+        }
+        .btn-default{
+            border: 1px solid #dcdfe6;
+            color: #606266;
+            background-color: #fff;
+        }
+        .btn-default:hover{
+            color: #409eff;
+            background-color: #ecf5ff;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="registerBod">
+        <div class="content">
+            <h1 style="margin-top: 0px;margin-bottom: 0px;">Register</h1>
+            <p class="regP">First Name</p>
+            <input type="text" id="first"><br />
+            <p class="regP">Last Name</p>
+            <input type="text" id="last"><br />
+            <p class="regP">Username</p>
+            <input type="text" id="username"><br />
+            <p class="regP">Password</p>
+            <input type="password" id="password"><br />
+            <p class="regP">E-mail</p>
+            <input type="text" id="email"><br />
+            <p class="regP">Address (Please enter valid address)</p>
+            <input type="text" id="paddr"><br />
+            <p class="regP">Credit Card</p>
+            <input type="text" id="CC"><br />
+            <!-- <button class="btn btn-primary" id="login">Login</button> -->
+            <button class="btn btn-primary" id="register">Register</button>
+            <button class="btn btn-default" id="backLog">Back to Login</button>
+        </div>
+    </div>
+
+<script>
+let first = document.getElementById('first')
+let last = document.getElementById('last')
+let username = document.getElementById('username')
+let password = document.getElementById('password')
+let email = document.getElementById('email')
+let paddr = document.getElementById('paddr')
+let CC = document.getElementById('CC')
+document.getElementById('register').onclick = async () => {
+    console.log(first.value);
+    console.log(last.value);
+    console.log(username.value);
+    console.log(password.value);
+    console.log(email.value);
+    console.log(paddr.value);
+    console.log(CC.value);
+    if(first.value === '' || last.value === '' || username.value === '' || password.value === '' || email.value === ''|| paddr.value === '' || CC.value === '' ){
+        alert('Please complete your information')
+        return
+    }
+    $.ajax({
+    method: "POST",
+    url: "/api/register",
+    data: { first: first.value, last: last.value, username: username.value, password: password.value, email: email.value, paddr: paddr.value, CC: CC.value }
+     })
+    .done(function( msg ) {
+        var success = msg["success"];
+        if(success == 1){
+            alert("Registration Successful!" + username.value);
+            sessionStorage.setItem("user", username.value);
+            location.href = './';
+        }
+
+    });
+}
+
+document.getElementById('backLog').onclick = ()=>{
+    location.href = '/login'
+}
+</script>
+
+<script>
+    $(document).ready(function(){
+    $(function(){
+              $('#header').load("header");
+            });
+        $(function(){
+            $('#footer').load("footer");
+        });
+
+        setTimeout(() => {
+              refreshTicker();
+            }, "1000");
+        });
+</script>
+<script src="./resources/js/requests.js"></script>
+
+<div id="footer"></div>
+</body>
+</html>

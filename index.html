@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>RKXC</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/7a77f5e404.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="header"></div>
+        
+         <section class="main">           
+            <div class="main-text">
+                <h3>SHOP SUSTAINABLY</h3>
+                <h2>SHOP ONLINE, SAVE THE PLANET</h2>
+                <p>For every item you purchase, we plant a tree! We reinvest our profits to help reforestation efforts around the globe.</p>
+                <button class="main-btn" onclick="location.href = '/sustainability';"><a href="sustainability">Sustainability Page</a></button>
+            </div>
+            <div class = "main-img"><img src="resources/images/main.jpg" alt="main-img"></div>
+        </section> 
+
+        <section class="about">
+            <div>
+                <h1>About RKXC</h1>
+                    <p>We were tired of feeling like our love of fashion was contributing to destroying the planet. So we decided to make a company to change that. Our company reinvests 5% of our profit back into reforestation efforts across the globe. On RKXC, you can shop knowing you are part of the SOLUTION!</p>
+            </div>
+        </section>
+
+       <section class="featured">
+            <div class="featured-text">
+                <h2>Featured Products</h2>
+                <p>Latest Designs by RKXC</p>
+                <div id="featured">
+                    <div class="dispItemF"><img src="./resources/images/M/Shirts/1c7c848803b8d344cc1f12a80879f7d4c92153a8.jpg" alt="1c7c848803b8d344cc1f12a80879f7d4c92153a8.jpg"><h3>Slim-Fit Polo</h3><p>$34</p><button onclick="location.href = '/mens';" style="cursor: pointer;">Shop Mens</button></div>
+
+                    <div class="dispItemF"><img src="./resources/images/F/Shoes/0a6d29d8f08a5b6409d0e28858eb8f23411e9f20.jpg" alt="0a6d29d8f08a5b6409d0e28858eb8f23411e9f20.jpg"><h3>Nina Ankle Strap Heel</h3><p>$67</p><button onclick="location.href = '/womens';" style="cursor: pointer;">Shop Womens</button></div>
+
+                    <div class="dispItemF"><img src="./resources/images/C/Shirts/4591e027995ef514ef235c0fbe904082--funny-toddler-shirt-sayings.jpg" alt="4591e027995ef514ef235c0fbe904082--funny-toddler-shirt-sayings.jpg"><h3>Cheeky Micky Tee</h3><p>$31</p><button onclick="location.href = '/kids';" style="cursor: pointer;">Shop Kids</button></div>
+                </div>
+
+            </div>
+
+            <div class="featured-container">
+                <div class="featured-products">
+                    
+                </div>
+                <div>
+
+                </div>
+            </div>
+
+
+       </section>
+
+   <div id="footer"></div>
+        <script>
+            $(document).ready(function() {
+            $(function(){
+              $('#header').load("header");
+            });
+            $(function(){
+                $('#footer').load("footer");
+            });
+
+            setTimeout(() => {
+              refreshTicker();
+            }, "1000");
+            });
+
+
+        </script>
+           <div id="footer"></div>
+           <script src="./resources/js/requests.js"></script>
+
+    </body>
+</html>

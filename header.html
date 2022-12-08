@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./resources/css/home-style.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/7a77f5e404.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="./resources/js/home_script.js"></script>
+        <script>
+            $(document).ready(function(){
+                var userHeader = sessionStorage.getItem("user");
+                console.log(userHeader);
+                if(userHeader === null){
+                    $("#logoutHeader").hide();
+                    $("#ordersHeader").hide();
+                } else{
+                    $("#loginHeader").hide();
+                    $("#logoutHeader").click(function(){
+                        sessionStorage.removeItem("user");
+                        alert("Successfully logged out!");
+                    })
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <section class="header">
+            
+            <a href="/"><img class="logo" src="./resources/images/logo.png" alt="logo"></a>
+            
+            <div>
+                
+                <ul id="nav-links">
+                    <li><a class = 'onThis' href="mens">Men</a></li>
+                    <li><a href="womens">Women</a></li>
+                    <li><a href="kids">Kids</a></li>
+                    <li id="loginHeader"><a href="login">Sign-up/Login</a></li>
+                    <li id="ordersHeader"><a href="orders">My Orders</a></li>
+                    <li id="logoutHeader"><a href="/">Logout</a></li>
+                    <li id="rm-cart"><a href="/checkout"><i class="fa-solid fa-bag-shopping"></i><span id="cartCount">0</span></a></li>
+                    <a href="#" id="back"><i class="fa-solid fa-chevron-left"></i></a>
+                </ul>
+            </div>
+            <div class="responsive">
+                <a href="/checkout"><i class="fa-solid fa-bag-shopping"></i><span id="resCartCount">0</span></a>
+                <i id="hamburger" class="fa-solid fa-bars"></i>
+            </div>
+        </section>

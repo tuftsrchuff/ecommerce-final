@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <title>Shop Mens</title>
+    <link rel="stylesheet" href="./resources/css/styles_orders.css">
+    <script src="./resources/js/home_script.js"></script>
+</head>
+<body>
+  <div id="header"></div>
+    <img src="" alt="">
+    <h1>Previous Orders</h1>
+    <div id="noorder">
+      <p >No previous orders! Get shopping and start planting!</p>
+    </div>
+    
+    <div id="orders"></div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $("#noorder").hide();
+          $(function(){
+              $('#header').load("header");
+            });
+          $(function(){
+            $('#footer').load("footer");
+          });
+            $.ajax({
+            url : '/api/orders',
+            method : 'GET',
+            data: {
+              username: sessionStorage.getItem("user")
+            },
+            success : function(data){
+              stringHTML = "";
+                console.log(data);
+                if(data.length == 0){
+                  $("#noorder").show();
+                }
+                for(i = 0; i < data.length; i++){
+                  console.log(data[i]);
+                      stringHTML += "<div class='order'><p class='drop-plus'>Items Ordered: </p>";
+                      stringHTML += "<p>";
+                      for(j = 0; j < data[i]["items"].length; j++){
+                        stringHTML += data[i]["items"][j]["name"];
+                        if(j != data[i]["items"].length - 1){
+                          stringHTML += "|";
+                        }
+                      }
+                      stringHTML += "</p>";
+                      
+                      stringHTML += "<p class='total'>" + "Total: $" + data[i].total + "</p>";
+                      stringHTML += "<p class='items>" + "Items: " + data[i].items + "</p>";
+                      stringHTML += "<p class='date'>" + "Date: " + data[i].date + "</p>";
+                      stringHTML += "<p class='date'>" + "Trees Planted: " + data[i].trees + "</p>";
+                      stringHTML += "</div>";
+                  }
+
+                  $("#orders").html(stringHTML);
+            },
+            error: function(err){
+              console.log('Failed');
+            }
+       });
+
+       setTimeout(() => {
+              refreshTicker();
+            }, "1000");
+    });
+    </script>
+  
+         
+
+  <div id="footer"></div>
+  <script src="./resources/js/requests.js"></script>
+
+</body>
+</html>

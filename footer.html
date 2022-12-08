@@ -1,0 +1,49 @@
+<br>
+<br>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Manage Your Account</h4>
+                <ul>
+                    <li id="ftOrder"><a href="/orders">My Orders</a></li>
+                    <li id="ftLogin"><a href="/login">Sign-In</a></li>
+                    <li id="ftRegister"><a href="/register">Register</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>We Accept the Following Payment Methods:</h4>
+                <img src="./resources/images/payment.png" alt="payment methods">
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Visit Us</h4>
+                <ul>
+                    <li>Address: 419 Boston Ave, Medford, MA 02155</li>
+                    <li>Hours: Monday to Sunday - 9:00am to 7:00pm</li>
+                    <li>Contact: +1 (329)264-5590</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            var userFooter = sessionStorage.getItem("user");
+            if(userFooter === null){
+                $("#ftOrder").hide();
+            } else{
+                $("#ftLogin").hide();
+                $("#ftRegister").hide();
+            }
+        });
+    </script>
+</footer>
