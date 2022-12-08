@@ -1,0 +1,707 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+*{
+    font-family: 'Nanum Myeongjo', serif;
+    margin:0px;
+    padding: 0;
+    box-sizing:border-box;
+    max-width: 100%;
+}
+
+h1{
+    line-height: 64px;
+    color: black;
+}
+
+h2{
+    line-height: 64px;
+    color: black;
+}
+
+h4{ 
+    font-size: 20px;
+    color: black;
+
+} 
+
+h6{
+    font-size: 16px;
+    color: gray;
+}
+
+p{
+    font-size: 16px;
+    color: black;
+    margin: 15px 0 20px 0;
+}
+
+body {
+    width: 100%;
+}
+
+#featured {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px){
+    .dispItemF{
+        width: 50%;
+        padding: 20px 0 ;
+        transition: all 0.2s;
+    }
+}
+@media screen  and (min-width:768px){
+    .dispItemF {
+        padding: 20px 0 ;
+        width: 25%;
+        transition: all 0.2s;
+    }
+}
+.dispItemF:hover{
+    scale: 1.01;
+    box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
+}
+.dispItemF img {
+    max-width: 70%;
+    height: 60%;
+    object-fit: contain;
+}
+
+.dispItemF h3 {
+    height: 15%;
+}
+
+.dispItemF p {
+    color: rgb(102, 196, 233);
+    height: 10%;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.dispItemF button {
+    height: 13%;
+    width: 60%;
+    background-color: rgb(102, 196, 233);
+    border: none;
+    transition: 0.2s;
+    border-radius: 3%;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.dispItemF button:hover {
+    scale: 1.01;
+    box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+/*Adding CSS to the header section*/
+
+.header {
+   
+    width: 100%;
+    position: relative;
+    background-color: #ffffff; 
+    box-shadow: 0px 5px 5px 0px rgba(7, 102, 186, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 5px;    
+    
+}
+
+
+#nav-links{
+align-items: center;
+display: flex;
+padding: 0px 30px;
+justify-content: center;
+
+}
+
+#nav-links li {
+    list-style: none;
+    padding: 0 55px;
+    position: relative;
+    
+}
+
+#rm-cart{
+    border-radius: 4px;
+}
+
+#cartCount{
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    position: absolute;
+    top: -11px;
+    padding: 0px;
+    border:2px rgb(102, 196, 233) solid;
+    background-color: rgb(102, 196, 233);;
+    border-radius: 5px;
+}
+
+
+#nav-links a{
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+    font-family: 'Space Mono', monospace;
+    
+}
+
+.header img{
+    width:13em; 
+    height: 10%;
+    margin-left: 50%;
+    margin: auto;
+}
+
+#nav-links li a:hover {
+    color: rgb(102, 196, 233);
+    transition: 0.2s;
+    margin: auto;
+}
+
+.responsive{
+    display: none;
+    align-items: center;
+    
+}
+
+
+.main{
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    align-items: center;
+    height: 73vh; 
+    box-shadow:0px 5px 5px 0px rgba(7, 102, 186, 0.1);
+    margin: auto;
+    height: auto;
+}      
+    
+.main-img{
+    width: 50%;
+    max-width: 100%;
+    display: flex;
+    align-items:flex-end;
+    justify-content:center;
+    margin: auto;
+    
+} 
+
+.main-img img {
+    height: 72.5vh;
+    margin-left: auto;
+    width: 100%;
+    border: 2px transparent;
+    border-radius: 5px;
+    border-end-end-radius: 50px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    margin: auto;
+}
+
+.main-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    text-align: center;
+    padding-left: 10px;
+    padding-right:10px; 
+    margin: auto;
+    
+   
+}
+
+.main-text h2{
+    color: rgb(29, 148, 195);
+    font-family: 'Space Mono', monospace;
+    font-size:75px;
+    padding-top: 4px;
+    margin: auto;
+}
+
+.main-text h3{
+    font-size:45px;
+    font-family: 'Space Mono', monospace;
+    margin: auto;
+}
+
+.main-text p{
+    font-family: 'Space Mono', monospace;
+    font-size: 25px; 
+    
+}
+
+.main-btn{
+    width:30%;
+    height: 60%;
+    border: 2px solid black;
+    font-size: 25px;
+    font-family: 'Space Mono', monospace;
+    position: relative;
+    cursor: pointer;
+    border-radius: 20%;
+    margin: 10px;
+    background-color: rgb(29, 148, 195);
+   }
+
+   .main-btn a{
+    text-decoration: none;
+    color: white;
+    padding: 3px;
+   }
+
+   .main-btn a:visited{
+        color: white;
+   }
+
+
+.main-btn:hover {
+    background: rgb(102, 196, 233);
+    transition: 0.2s;
+}
+
+.about{
+    box-shadow: 0px 5px 5px 0px rgba(7, 102, 186, 0.1);
+    height: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.about h1{
+    font-family: 'Space Mono' ;
+    text-align: center;
+    font-size: 50px;
+    margin-top:1em;
+}
+
+.about p{
+    font-family: 'Space Mono', monospace;
+    text-align: center;
+    font-size: 20px;
+    padding: 0px 10px;
+}
+
+.featured{
+    box-shadow: 0px 5px 5px 0px rgba(7, 102, 186, 0.1);   
+    
+}
+
+.featured-text{
+    text-align: center;
+}
+
+.featured h2{
+    
+    font-family: 'Space Mono' ;
+    font-size: 50px;
+    margin-top:1em;
+    text-align: center;
+}
+
+
+.featured p{
+    font-family: 'Space Mono', monospace;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.container{
+	max-width: 1170px;
+	margin:auto;
+    font-family: 'Space Mono', monospace;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+    
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: rgb(112, 189, 220);
+    padding: 70px 0;
+    
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 28px;
+	color:black;
+	margin-bottom: 35px;
+	
+    font-family: 'Space Mono';
+}
+
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 25px;
+	color: black;
+	text-decoration: none;
+	font-weight: 300;
+	display: block;
+	transition: 0.3s;
+   font-family: 'Space Mono', monospace;
+}
+
+.footer-col ul li {
+	font-size: 25px;
+	color: black;
+	text-decoration: none;
+	font-weight: 300;
+	display: block;
+	transition: 0.3s;
+    font-family: 'Space Mono', monospace;
+
+}
+
+.footer-col ul li a:hover{
+	color: #ffffff;
+
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(42, 6, 204, 0.308);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: 0.3s;
+    
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+
+#back{
+    display: none;
+}
+
+/*Adding Media Queries for responsive design*/
+
+@media (max-width: 1030px) {
+
+    .main-btn{
+        width: 75%;
+    }
+}
+
+@media (max-width: 799px) {
+
+    .main-text{
+        width: 100%;
+    }
+
+    #resCartCount{
+        font-size: 15px;
+        color: black;
+        font-weight: bold;
+        position: absolute;
+        top: 95px;
+        right: 69px;
+        padding: 0px;
+        border:2px rgb(102, 196, 233) solid;
+        background-color: rgb(102, 196, 233);;
+        border-radius: 5px;
+    }
+
+       
+    
+    /*Fixing the nav-bar position*/
+
+    #nav-links {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0px;
+        right: -2000px;
+        height: 100vh;
+        width: 300px;
+        /* padding: 40% 0 40% 0; */
+        padding-top: 10vh;
+        padding-bottom: 10vh;
+        background-color: rgb(227, 189, 189);
+        border: 5px black solid;;
+        border-radius: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-top-right-radius:2px;
+        border-bottom-right-radius:2px;
+        transition: 0.5s;
+        z-index: 2;
+    }
+
+    #nav-links li{
+        margin-bottom: 25px;
+        padding-top: 30px;
+    }
+
+    .responsive{
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+        
+    }
+
+
+    .responsive i{
+        color: black;
+        padding-left: 15px;
+        padding-right: 20px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+
+    #nav-links.navActive{
+        right: 0px;
+    }
+
+    #back{
+        display: flex;
+        /* position: absolute;
+        top: 220px;
+        left: 50px;
+        display: initial; */
+    }
+
+    /*Removing cart icon from the hamburger menu*/
+    #rm-cart{
+        display: none;
+    }
+
+
+
+    .main-text {
+        padding: 0 50px;
+        justify-content: center;
+        align-items: center;
+     
+    }
+
+    .main-btn{
+        width:60%;
+        height: 60%;
+        border: 2px solid black;
+        font-size: 25px;
+        font-family: 'Space Mono';
+        position: relative;
+        cursor: pointer;
+        border-radius: 20%;
+       }
+
+       .main-text p{
+        font-family: 'Space Mono';
+        font-size: 25px; 
+        line-height: 35px;
+    }
+
+    .main-img{
+        display: none;
+    }
+
+    .about{
+        box-shadow: 0px 5px 5px 0px rgba(7, 102, 186, 0.1);
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        height: auto;
+        
+    }
+    .about h1{
+        font-family: 'Space Mono' ;
+        text-align: center;
+        font-size: 50px;
+    }
+    
+    .about p{
+        font-family: 'Space Mono';
+        text-align: center;
+        font-size: 25px;
+        line-height: 35px;
+        padding: 0px 10px 10px 0px;
+    }
+
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+
+   
+
+}
+
+@media (max-width:477px){
+
+    body{
+     max-width: 100%;
+    }
+
+     #nav-links {
+         display: flex;
+         flex-direction: column;
+         align-self: flex-start;
+         justify-content: flex-start;
+         position: fixed;
+         top: 0px;
+         right: -2000px;
+         height: 90vh;
+         width: 400px;
+         padding: 40% 0 0 0;
+         background-color: rgb(227, 189, 189);
+         border: 5px black solid;;
+         border-radius: 5px;
+         border-top-left-radius: 50px;
+         border-bottom-left-radius: 50px;
+         border-top-right-radius:2px;
+         border-bottom-right-radius:2px;
+         transition: 0.5s;
+
+     }
+ 
+     #nav-links li{
+         margin-bottom: 5%;
+     }
+
+     #nav-links a{
+         font-size: 20px;
+         margin-right: 99px;
+     }
+ 
+     .responsive{
+         display: flex;
+         align-items: center;
+         font-size: 22px;
+     }
+ 
+ 
+     .responsive i{
+         color: black;
+         padding-left: 10px;
+         padding-right: 5px;
+         font-size: 25px;
+         cursor: pointer;
+     }
+ 
+     #nav-links.navActive{
+         right: 0px;
+     }
+ 
+     #back{
+         position: absolute;
+         top: 220px;
+         left: 50px;
+         display: initial;
+     }
+ 
+     /*Removing cart icon from the hamburger menu*/
+     #rm-cart{
+         display: none;
+     }
+     
+     .header img {
+         width: 35%;
+         margin-left: 15%;
+     }
+     
+     .main-btn{
+         width:70%;
+         height: 50%;
+         border: 2px solid black;
+         font-size: 15px;
+         font-family: 'Space Mono';
+         position: relative;
+         cursor: pointer;
+         border-radius: 20%;
+        }
+
+        .main-text h2{
+         font-size: 20px;
+         line-height: normal;
+     }
+
+     .main-text h3{
+         font-size: 15px;
+         line-height: normal;
+     }
+ 
+        .main-text p{
+        font-size: 13px;
+        line-height: normal;
+     }
+
+     .about h1{
+         font-size: 25px;
+         line-height: normal;
+     }
+     
+     .about p{
+         font-size: 13px;
+         line-height: normal;
+         padding: 0px 10px 10px 0px;
+     }
+
+     .featured h2{
+ 
+         font-size: 25px;
+         line-height: normal;
+         
+     }
+     
+     
+     .featured p{
+         font-size: 13px;
+         line-height: normal;
+         padding: 0px 10px 10px 0px;
+         
+     }
+
+     
+     .footer-col{
+         width: 100%;
+
+     }
+
+     .footer-col ul li a{
+         font-size: 15px;
+ }
+
+ .footer-col ul li {
+     font-size: 15px;
+ }
+
+ .footer-col h4{
+     font-size: 20px;
+ }
+
+}
+
+@media(max-width:767px){
+
+}

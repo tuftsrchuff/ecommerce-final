@@ -1,0 +1,227 @@
+*{
+    font-family: 'Nanum Myeongjo', serif;
+    margin:0px;
+    padding: 0;
+    box-sizing:border-box;
+    max-width: 100%;
+}
+
+    body {
+        background-color: rgb(132, 190, 44);
+        /* color: #FEE153; */
+        font-family: 'Nunito', sans-serif;
+        margin: 0px;
+        text-align: center;
+    }
+    
+    #home-canvas{
+        background-image: url("../images/homepic.jpeg");
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+    }
+    
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #04437A;
+        color: #FEE153;
+        display: flex;
+    }
+    
+    nav ul {
+        list-style-type: none;
+        display: flex;
+        width: 40%;
+        justify-content: space-between;
+        font-size:20px;
+        padding: 0 20px;
+    }
+    
+    nav img {
+        display: block;
+        width: 125px;
+        margin-right: auto;
+        padding: 5px;
+    }
+    
+    
+    .title {
+        text-align: center;
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .title h1{
+        color: white;
+    }
+    h1{
+        font-size: 4rem;
+    }
+    
+    h2 {
+        text-decoration: underline;
+        font-size: 2rem;
+    }
+    
+    h4 {
+        text-decoration: underline;
+        font-size: 1.5rem;
+    }
+    
+    p {
+        font-size: 1.5rem;
+    }
+    
+    a{
+        color: white;
+    }
+    
+    .subsection img{
+        
+        max-width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        border-radius: 50%;
+        max-height: 40em;
+    }
+    
+    footer{
+        background-color: #FEE153;
+        color: white;
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+        text-align: center;
+        font-size: 40px;
+    }
+    
+    h3 {
+        margin: 20px 0px;
+        font-size: 2rem;
+    }    
+
+    
+    
+    .subsection {
+        text-align: center;
+        width: 90%;
+        margin-right: 0px;
+        border-color: #717F35;
+        border-right: 2px solid #717F35;
+        border-left: 2px solid #717F35;
+    }
+    
+    .booster {
+        height: 300px;
+        padding-top: 90px;
+        text-align: center;
+        background-color: white;
+        color: black;
+        margin: 0px;
+    }
+    
+    .booster a {
+        color: #5D9A84;
+    }
+    
+    .info-links{
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .info-links div{
+        background-color: #FEE153;
+        color: black;
+    }
+    
+    
+    
+    
+    .subnav{
+        position: absolute;
+        background-color: #04437A;
+        z-index: 1;
+        display: none;
+    }
+    .drop-nav{
+        overflow: hidden;
+        list-style: none;
+        padding: 0;
+        width: 100%;
+        left: 0;
+        top: 48px;
+        
+    }
+    .drop-nav:hover .subnav {
+        display: block;
+        font-size: 20px;
+        max-width: 20%;
+    }
+    
+    .drop-nav:hover{
+        background-color: #FEE153;
+        color: #04437A;
+    }
+    
+    .drop-nav:hover > a{
+        color: #04437A;
+    }
+
+        
+    .how-step {
+        display: inline-block;
+        background-color: white;
+        width: 350px;
+        height: 200px;
+        margin-right: 50px;
+        color: black;
+        
+        overflow: hidden;
+        min-height: 230px;
+    }
+    
+    .how-image img {
+        /* display: inline-block; */
+        width: 180px;
+        height: 120px;
+    }
+
+    .how-text {
+        width: 220px;
+        padding-top: 23px;
+    }
+    
+    #map {
+        background-image: url("../images/map.svg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow: visible;
+        /* z-index: 1; */
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .map-header {
+        top: 0;
+        left: 0;
+        /* z-index: 2; */
+        /* display: flex; */
+        width: 100%;
+        height: auto;
+        padding: 30px 0;
+        background: rgba(102,138,122,.8);
+        box-sizing: border-box;
+        /* position: absolute; */
+    }

@@ -1,0 +1,103 @@
+* {
+    font-family: 'Nanum Myeongjo', serif;
+    margin: 0px;
+    padding: 0;
+    max-width: 100%;
+}
+
+body {
+    background-color: white;
+    text-align: center;
+}
+
+#cart {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.dispItem{
+    margin: auto;
+}
+
+#userInfo{
+    margin: 10px;
+    border: 5px solid black;
+    padding: 5px;
+}
+
+#login,#register,#checkoutBtn{
+    height: 13%;
+    width: 30%;
+    background-color: rgb(102, 196, 233);
+    border: none;
+    transition: 0.2s;
+    border-radius: 3%;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 10px;
+    padding: 5px;
+
+}
+
+#login:hover,#register:hover,#checkoutBtn:hover{
+    color: white;
+    background-color: rgb(0, 106, 255);
+}
+
+
+
+
+@media screen and (max-width: 768px){
+    .dispItem{
+        width: 50%;
+        padding: 20px 0 ;
+        transition: all 0.2s;
+    }
+}
+@media screen  and (min-width:768px){
+    .dispItem {
+        padding: 20px 0 ;
+        width: 25%;
+        transition: all 0.2s;
+    }
+}
+.dispItem:hover{
+    scale: 1.01;
+    box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
+}
+.dispItem img {
+    max-width: 70%;
+    height: 60%;
+    object-fit: contain;
+}
+
+.dispItem h3 {
+    height: 15%;
+}
+
+.dispItem p {
+    color: rgb(102, 196, 233);
+    height: 10%;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.dispItem button {
+    height: 13%;
+    width: 60%;
+    background-color: rgb(102, 196, 233);
+    border: none;
+    transition: 0.2s;
+    border-radius: 3%;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.dispItem button:hover {
+    scale: 1.01;
+    box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
+}
