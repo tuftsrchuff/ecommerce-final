@@ -8,8 +8,13 @@ server.use(bodyParser.json());
 
 server.use('/resources', express.static(__dirname + '/resources'));
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
 
-server.set('port', process.env.port || 8080);
+
+server.listen(port);
 
 //Serve HTML files to browser
 server.get('/', async (request, response) =>{
