@@ -120,7 +120,7 @@ document.getElementById('register').onclick = async () => {
     .done(function( msg ) {
         var success = msg["success"];
         if(success == 1){
-            alert("Registration Successful!" + username.value);
+            alert("Registration Successful!");
             sessionStorage.setItem("user", username.value);
             location.href = './';
         }
