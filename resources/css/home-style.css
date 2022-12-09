@@ -443,8 +443,10 @@ ul{
         height: 100vh;
         width: 300px;
         /* padding: 40% 0 40% 0; */
-        padding-top: 10vh;
+        padding-top: 22vh;
         padding-bottom: 10vh;
+        padding-left: 10vh;
+        padding-right: 16vh;
         background-color: rgb(227, 189, 189);
         border: 5px black solid;;
         border-radius: 5px;
@@ -484,6 +486,8 @@ ul{
 
     #back{
         display: flex;
+        padding-left: 7vh;
+        padding-top: 3vh;
         /* position: absolute;
         top: 220px;
         left: 50px;
@@ -563,7 +567,7 @@ ul{
      max-width: 100%;
     }
 
-     #nav-links {
+     /* #nav-links {
          display: flex;
          flex-direction: column;
          align-self: flex-start;
@@ -583,7 +587,33 @@ ul{
          border-bottom-right-radius:2px;
          transition: 0.5s;
 
-     }
+     } */
+
+     #nav-links {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0px;
+        right: -2000px;
+        height: 100vh;
+        width: 300px;
+        /* padding: 40% 0 40% 0; */
+        padding-top: 22vh;
+        padding-bottom: 10vh;
+        padding-left: 10vh;
+        padding-right: 16vh;
+        background-color: rgb(227, 189, 189);
+        border: 5px black solid;;
+        border-radius: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-top-right-radius:2px;
+        border-bottom-right-radius:2px;
+        transition: 0.5s;
+        z-index: 2;
+    }
  
      #nav-links li{
          margin-bottom: 5%;
@@ -608,17 +638,29 @@ ul{
          font-size: 25px;
          cursor: pointer;
      }
+
+     #resCartCount{
+        top: 33px;
+        right: 36px;
+        font-size: 13px;
+     }
  
      #nav-links.navActive{
          right: 0px;
      }
- 
+
      #back{
-         position: absolute;
-         top: 220px;
-         left: 50px;
-         display: initial;
-     }
+        display: flex;
+        padding-left: 20vh;
+        padding-top: 4vh;
+        /* position: absolute;
+        top: 220px;
+        left: 50px;
+        display: initial; */
+    }
+
+
+
  
      /*Removing cart icon from the hamburger menu*/
      #rm-cart{
